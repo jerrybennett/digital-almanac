@@ -4,7 +4,8 @@ import { searchUrl } from './Resources.js'
 export default class Input extends Component {
 
   state = {
-    input: ''
+    input: '',
+    areaCode: ''
   }
 
   handleChange = (e) => {
@@ -13,11 +14,20 @@ export default class Input extends Component {
     })
   }
 
+
+  handleClick = () => {
+    this.setState({
+      areaCode: this.state.input,
+      input: ''
+    })
+  }
+
   render() {
-  console.log(this.state.input)
+  console.log(this.state)
     return (
       <div>
         <input onChange={this.handleChange} type='text' placeholder='Area Code' value={this.state.input}/>
+        <button onClick={this.handleClick}>Search</button>
       </div>
     );
   }
