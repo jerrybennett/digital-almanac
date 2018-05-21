@@ -20,6 +20,7 @@ export default class Input extends Component {
       areaCode: this.state.input,
       input: ''
     })
+    console.log(searchUrl(this.state.input))
   }
 
   render() {
